@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 const View = (props) => {
     const { data } = props;
@@ -7,8 +7,8 @@ const View = (props) => {
         <>
             <div>
                 {
-                    data.map((item, i) => {
-                        <p key={i}>{item.name}</p>
+                    data.length > 0 && data.map((el, i) => {
+                        return (<p key={i}>{i + 1} - {el.name}</p>)
                     })
                 }
             </div>
